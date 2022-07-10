@@ -1,3 +1,20 @@
 * {
+  font-size: 20px;
   box-sizing: border-box;
+}
+
+h1 {
+  font-size: 26px;
+}
+
+h2 {
+  font-size: 22px;
+}
+
+div,
+p,
+ul,
+header,
+footer {
+  border: solid 2px #000000; /*TODO: Убрать это свойство, когда буду работать над внешним видом*/
 }

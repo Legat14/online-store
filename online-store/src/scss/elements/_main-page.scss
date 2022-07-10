@@ -1,0 +1,30 @@
+@import "../general/mixines";
+
+.header {
+  width: 100%;
+  height: 120px;
+  @include flex(column, space-evenly, center);
+}
+
+.top-panel {
+  @include flex(row, space-evenly, center);
+}
+
+.wrapper {
+  width: 1400px;
+  @include flex(row, space-between, flex-start);
+
+  .side-panel {
+    width: 400px;
+  }
+
+  .showcase {
+    flex-grow: 1;
+  }
+}
+
+.footer {
+  width: 100%;
+  height: 100px;
+  @include flex(row, space-evenly, center);
+}
