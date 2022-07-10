@@ -1,3 +1,2 @@
 import './scss/main.scss'
-
-console.log('testing');
+import './ts-modules/engine/store-filling'
