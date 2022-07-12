@@ -1,0 +1,31 @@
+@import "../general/mixines";
+
+$card-color: #ffed49;
+
+.item-card {
+  width: 300px;
+  background-color: $card-color;
+
+  .item-card__img-div {
+    width: 100px;
+    height: 100px;
+    @include flex(row, center, center);
+    .item-card__img {
+      width: 100%;
+    }
+  }
+  
+  .item-card__popular-img-div {
+    width: 100px;
+    height: 100px;
+    @include flex(row, center, center);
+    .item-card__popular-img {
+      width: 100%;
+      height: 100%;
+    }
+    .item-card__popular-img_hidden {
+      display: none;
+    }
+
+  }
+}

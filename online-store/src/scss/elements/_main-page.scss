@@ -11,6 +11,7 @@
 }
 
 .wrapper {
+  margin: 0 auto;
   width: 1400px;
   @include flex(row, space-between, flex-start);
 
@@ -19,6 +20,10 @@
   }
 
   .showcase {
+
+    @include flex(row, space-evenly, flex-start);
+    flex-wrap: wrap;
+    gap: 20px;
     flex-grow: 1;
   }
 }

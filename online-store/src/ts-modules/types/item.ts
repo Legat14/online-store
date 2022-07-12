@@ -7,20 +7,20 @@ export class Item {
   title: string;
   type: InstrumentType;
   img: string;
-  year: number;
+  releaseYear: number;
   producer: InstrumentProducer;
   color: InstrumentColor;
   price: number;
   isPopular: boolean;
 
-  constructor(title: string, type: InstrumentType, img: string, year: number,
+  constructor(title: string, type: InstrumentType, img: string, releaseYear: number,
     producer: InstrumentProducer, color: InstrumentColor, price: number, isPopular: boolean) {
     this.id = Item.currentId;
     Item.currentId++;
     this.title = title;
     this.type = type;
     this.img = img;
-    this.year = year;
+    this.releaseYear = releaseYear;
     this.producer = producer;
     this.color = color;
     this.price = price;
@@ -49,7 +49,7 @@ export enum InstrumentProducer {
   Hohner = 'Hohner',
   Seydel = 'Seydel',
   Suzuki = 'Susuki',
-  DAddario = 'D\'Addario',
+  DAddario = 'D\'Addario', // TODO: Заменить на бренд барабанов
   Ludwig = 'Ludwig'
 }
 
@@ -61,5 +61,6 @@ export enum InstrumentColor {
   Red = 'Красный',
   Green = 'Зеленый',
   Yellow = 'Желтый',
-  Brown = 'Коричневый'
+  Brown = 'Коричневый',
+  Wood = 'Цвет дерева'
 }
