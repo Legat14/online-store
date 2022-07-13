@@ -47,9 +47,9 @@ export enum InstrumentProducer {
   Casio = 'Casio',
   Korg = 'Korg',
   Hohner = 'Hohner',
-  Seydel = 'Seydel',
+  SeydelSohne = 'Seydel Sohne',
   Suzuki = 'Susuki',
-  DAddario = 'D\'Addario', // TODO: Заменить на бренд барабанов
+  Tama = 'Tama',
   Ludwig = 'Ludwig'
 }
 
@@ -61,6 +61,7 @@ export enum InstrumentColor {
   Red = 'Красный',
   Green = 'Зеленый',
   Yellow = 'Желтый',
+  Orange = 'Оранжевый',
   Brown = 'Коричневый',
   Wood = 'Цвет дерева'
 }

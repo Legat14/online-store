@@ -1,9 +1,12 @@
-import { showcaseArr } from "../vars/vars";
+import { storageArr } from "../vars/vars";
+import { popularChecked } from "../engine/popular-filter";
 import { Item } from "./item";
+import { Storage } from "./types";
 
 export class Showcase {
 
   showcase: HTMLDivElement | null;
+  showcaseArr: Storage = [];
 
   constructor() {
     this.showcase = document.querySelector('.showcase');
@@ -80,8 +83,36 @@ export class Showcase {
     this.showcase?.append(itemCard);
   }
 
+  filterShowcase():void {
+
+    this.showcaseArr = [];
+    storageArr.forEach(item => {
+      console.log(item.isPopular);
+      console.log(popularChecked);
+      if (popularChecked) { // Фильтр популярных элементов
+        if (item.isPopular) {
+          this.showcaseArr.push(item);
+        }
+      } else {
+        this.showcaseArr.push(item);
+      }
+    });
+    console.log(this.showcaseArr);
+    console.log('storageArr: ', storageArr);
+  }
+  
+  cleanShowcase(){
+    const allCards: NodeListOf<HTMLDivElement> = document.querySelectorAll('.item-card');
+    allCards.forEach(card => {
+      card.remove();
+    });
+    console.log('showcase clean');
+  }
+
   fillShowcase(): void {
-    showcaseArr.forEach((item: Item): void => {
+    this.filterShowcase();
+    this.cleanShowcase();
+    this.showcaseArr.forEach((item: Item): void => {
       this.createCard(item);
     });
   }
