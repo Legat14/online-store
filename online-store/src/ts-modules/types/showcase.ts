@@ -2,6 +2,7 @@ import { storageArr } from "../vars/vars";
 import { popularChecked } from "../engine/popular-filter";
 import { Item } from "./item";
 import { Storage } from "./types";
+import { typeFilter } from "../engine/type-filter";
 
 export class Showcase {
 
@@ -87,18 +88,30 @@ export class Showcase {
 
     this.showcaseArr = [];
     storageArr.forEach(item => {
-      console.log(item.isPopular);
-      console.log(popularChecked);
+
+      let isPassFilter: boolean = true;
+
       if (popularChecked) { // Фильтр популярных элементов
-        if (item.isPopular) {
-          this.showcaseArr.push(item);
+        if (!item.isPopular) {
+          isPassFilter = false;
         }
-      } else {
+      }
+
+      if (isPassFilter && typeFilter.length !== 0) {
+        isPassFilter = false;
+        typeFilter.forEach(filter => {
+          if (item.type === filter) {
+            isPassFilter = true;
+          }
+        });
+      }
+
+      if (isPassFilter) {
         this.showcaseArr.push(item);
       }
     });
+
     console.log(this.showcaseArr);
-    console.log('storageArr: ', storageArr);
   }
   
   cleanShowcase(){

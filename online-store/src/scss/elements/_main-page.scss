@@ -14,14 +14,22 @@
   margin: 0 auto;
   width: 1400px;
   @include flex(row, space-between, flex-start);
-
+  
   .side-panel {
     width: 400px;
+    @include flex(column, flex-start, flex-start);
+    gap: 20px;
+    
+    .side-panel__filter {
+      @include flex(column, flex-start, flex-start);
+      gap: 10px;
+    }
   }
 
   .showcase {
 
     @include flex(row, space-evenly, flex-start);
+    width: 100%;
     flex-wrap: wrap;
     gap: 20px;
     flex-grow: 1;
