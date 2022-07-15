@@ -26,7 +26,6 @@ guitarsCheckbox?.addEventListener('change', () => {
     const filterPos: number = typeFilter.indexOf(InstrumentType.Guitars);
     typeFilter.splice(filterPos, 1);
     console.log('Guitars filter unchecked');
-    console.log(filterPos);
     console.log(typeFilter);
   }
   showcase.fillShowcase();
@@ -41,7 +40,6 @@ keyboardsCheckbox?.addEventListener('change', () => {
     const filterPos: number = typeFilter.indexOf(InstrumentType.Keyboards);
     typeFilter.splice(filterPos, 1);
     console.log('Keyboards filter unchecked');
-    console.log(filterPos);
     console.log(typeFilter);
   }
   showcase.fillShowcase();
@@ -56,7 +54,6 @@ harmonicasCheckbox?.addEventListener('change', () => {
     const filterPos: number = typeFilter.indexOf(InstrumentType.Harmonicas);
     typeFilter.splice(filterPos, 1);
     console.log('Harmonicas filter unchecked');
-    console.log(filterPos);
     console.log(typeFilter);
   }
   showcase.fillShowcase();
@@ -71,7 +68,6 @@ drumsCheckbox?.addEventListener('change', () => {
     const filterPos: number = typeFilter.indexOf(InstrumentType.Drums);
     typeFilter.splice(filterPos, 1);
     console.log('Drums filter unchecked');
-    console.log(filterPos);
     console.log(typeFilter);
   }
   showcase.fillShowcase();

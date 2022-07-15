@@ -5,8 +5,6 @@ export const colorFilter: InstrumentColor[] = [];
 
 const colorCheckboxes: NodeListOf <HTMLInputElement> = document.querySelectorAll('.side-panel__color-filter input');
 
-console.log(colorCheckboxes);
-console.log(InstrumentColor);
 console.log('Color filter on');
 
 colorCheckboxes.forEach(checkbox => {
@@ -14,8 +12,6 @@ colorCheckboxes.forEach(checkbox => {
     const filterName: string | undefined = checkbox.parentElement?.innerText.replace(' ', '').replace(' ', '');
     const currentFilter: InstrumentColor = InstrumentColor[filterName as keyof typeof InstrumentColor];
     if(checkbox.checked) {
-      console.log('Начало', filterName, 'Конец');
-      console.log('Color: ', InstrumentColor[filterName as keyof typeof InstrumentColor]);
       colorFilter.push(currentFilter);
       console.log('Color filter checked');
     } else {
@@ -24,7 +20,7 @@ colorCheckboxes.forEach(checkbox => {
       console.log('Color filter unchecked');
     }
 
-    console.log(colorFilter);
+    console.log('Color filter: ', colorFilter);
     showcase.fillShowcase();
 
   });

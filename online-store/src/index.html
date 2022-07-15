@@ -20,9 +20,20 @@
   <main>
     <div class="top-panel">
       <!--TODO: сделать прилипчивой-->
-      <div class="sort">Сортировка</div>
+      <div class="top-panel__sort-block">
+        <p>Sort:</p>
+        <select name="sort" class="sort-block__select" size="1">
+          <option value="NoSort" selected>No sort</option>
+          <option value="Alphabetical">A-Z 🠕</option>
+          <option value="AlphabeticalBackward">Z-A 🠗</option>
+          <option value="ByYear">From modern to old 🠕</option>
+          <option value="ByYearBackward">From old to modern 🠗</option>
+          <option value="ByPrice">From cheap to expensive 🠕</option>
+          <option value="ByPriceBackward">From expensive to cheap 🠗</option>
+        </select>
+      </div>
       <div class="search">Поиск</div>
-      <div class="cart">Карзина</div>
+      <div class="cart">Корзина</div>
     </div>
     <div class="wrapper">
       <aside class="side-panel">

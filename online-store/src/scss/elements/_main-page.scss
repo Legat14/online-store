@@ -8,6 +8,9 @@
 
 .top-panel {
   @include flex(row, space-evenly, center);
+  .sort {
+    @include flex(row, space-between, center);
+  }
 }
 
 .wrapper {

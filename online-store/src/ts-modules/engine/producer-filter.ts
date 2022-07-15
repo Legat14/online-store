@@ -5,8 +5,6 @@ export const producerFilter: InstrumentProducer[] = [];
 
 const producerCheckboxes: NodeListOf <HTMLInputElement> = document.querySelectorAll('.side-panel__producer-filter input');
 
-console.log(producerCheckboxes);
-console.log(InstrumentProducer);
 console.log('Producer filter on');
 
 producerCheckboxes.forEach(checkbox => {
@@ -14,8 +12,6 @@ producerCheckboxes.forEach(checkbox => {
     const filterName: string | undefined = checkbox.parentElement?.innerText.replace(' ', '').replace(' ', '');
     const currentFilter: InstrumentProducer = InstrumentProducer[filterName as keyof typeof InstrumentProducer];
     if(checkbox.checked) {
-      console.log('Начало', filterName, 'Конец');
-      console.log('Producer: ', InstrumentProducer[filterName as keyof typeof InstrumentProducer]);
       producerFilter.push(currentFilter);
       console.log('Producer filter checked');
     } else {
@@ -24,7 +20,7 @@ producerCheckboxes.forEach(checkbox => {
       console.log('Producer filter unchecked');
     }
 
-    console.log(producerFilter);
+    console.log('Producer filter: ', producerFilter);
     showcase.fillShowcase();
 
   });

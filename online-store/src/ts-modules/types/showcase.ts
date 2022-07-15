@@ -116,7 +116,6 @@ export class Showcase {
             isPassFilter = true;
           }
         });
-        console.log(isPassFilter);
       }
 
       if (isPassFilter && colorFilter.length !== 0) { // Фильтр по цвету
@@ -126,7 +125,6 @@ export class Showcase {
             isPassFilter = true;
           }
         });
-        console.log(isPassFilter);
       }
 
       if (isPassFilter) {
@@ -134,7 +132,7 @@ export class Showcase {
       }
     });
 
-    console.log(this.showcaseArr);
+    console.log('ShowcaseArr: ', this.showcaseArr);
   }
   
   cleanShowcase(){
@@ -142,13 +140,52 @@ export class Showcase {
     allCards.forEach(card => {
       card.remove();
     });
-    console.log('showcase clean');
   }
 
   sortShowcase(){
     if (sortBy === sortByEnum.Alphabetical) {
       this.showcaseArr.sort((item1: Item, item2: Item): number => {
-        if (item1.title > item2.title) {
+        if (item1.title.toLowerCase() > item2.title.toLowerCase()) {
+          return 1;
+        } else {
+          return -1;
+        }
+      });
+    } else if (sortBy === sortByEnum.AlphabeticalBackward) {
+      this.showcaseArr.sort((item1: Item, item2: Item): number => {
+        if (item1.title.toLowerCase() <= item2.title.toLowerCase()) {
+          return 1;
+        } else {
+          return -1;
+        }
+      });
+    } else if (sortBy === sortByEnum.ByYear) {
+      this.showcaseArr.sort((item1: Item, item2: Item): number => {
+        if (item1.releaseYear <= item2.releaseYear) {
+          return 1;
+        } else {
+          return -1;
+        }
+      });
+    } else if (sortBy === sortByEnum.ByYearBackward) {
+      this.showcaseArr.sort((item1: Item, item2: Item): number => {
+        if (item1.releaseYear > item2.releaseYear) {
+          return 1;
+        } else {
+          return -1;
+        }
+      });
+    } else if (sortBy === sortByEnum.ByPrice) {
+      this.showcaseArr.sort((item1: Item, item2: Item): number => {
+        if (item1.price > item2.price) {
+          return 1;
+        } else {
+          return -1;
+        }
+      });
+    } else if (sortBy === sortByEnum.ByPriceBackward) {
+      this.showcaseArr.sort((item1: Item, item2: Item): number => {
+        if (item1.price <= item2.price) {
           return 1;
         } else {
           return -1;

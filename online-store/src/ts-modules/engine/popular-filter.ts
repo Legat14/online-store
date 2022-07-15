@@ -10,5 +10,5 @@ console.log('Popular filter on');
 popularCheckbox?.addEventListener('change', () => {
   popularChecked = !popularChecked;
   showcase.fillShowcase();
-  console.log(popularChecked);
+  console.log('Popular filter: ', popularChecked);
 });
