@@ -34,10 +34,10 @@ export class Item {
 }
 
 export enum InstrumentType {
-  Guitars = 'Гитары',
-  Keyboards = 'Синтезаторы',
-  Harmonicas = 'Губные гармошки',
-  Drums = 'Барабаны'
+  Guitars = 'Guitars',
+  Keyboards = 'Keyboards',
+  Harmonicas = 'Harmonicas',
+  Drums = 'Drums'
 }
 
 export enum InstrumentProducer {
@@ -54,14 +54,14 @@ export enum InstrumentProducer {
 }
 
 export enum InstrumentColor {
-  White = 'Белый',
-  Black = 'Черный',
-  Metallic = 'Металлический',
-  Blue = 'Синий',
-  Red = 'Красный',
-  Green = 'Зеленый',
-  Yellow = 'Желтый',
-  Orange = 'Оранжевый',
-  Brown = 'Коричневый',
-  Wood = 'Цвет дерева'
+  White = 'White',
+  Black = 'Black',
+  Metallic = 'Metallic',
+  Blue = 'Blue',
+  Red = 'Red',
+  Green = 'Green',
+  Yellow = 'Yellow',
+  Orange = 'Orange',
+  Brown = 'Brown',
+  Wood = 'Wood'
 }

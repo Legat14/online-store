@@ -3,6 +3,8 @@ import { popularChecked } from "../engine/popular-filter";
 import { Item } from "./item";
 import { Storage } from "./types";
 import { typeFilter } from "../engine/type-filter";
+import { sortBy, sortByEnum } from "../engine/sort";
+import { producerFilter } from "../engine/producer-filter";
 
 export class Showcase {
 
@@ -97,13 +99,23 @@ export class Showcase {
         }
       }
 
-      if (isPassFilter && typeFilter.length !== 0) {
+      if (isPassFilter && typeFilter.length !== 0) { // Фильтр по типу инструмента
         isPassFilter = false;
         typeFilter.forEach(filter => {
           if (item.type === filter) {
             isPassFilter = true;
           }
         });
+      }
+
+      if (isPassFilter && producerFilter.length !== 0) { // Фильтр по производителю
+        isPassFilter = false;
+        producerFilter.forEach(filter => {
+          if (item.producer === filter) {
+            isPassFilter = true;
+          }
+        });
+        console.log(isPassFilter);
       }
 
       if (isPassFilter) {
@@ -122,8 +134,21 @@ export class Showcase {
     console.log('showcase clean');
   }
 
+  sortShowcase(){
+    if (sortBy === sortByEnum.Alphabetical) {
+      this.showcaseArr.sort((item1: Item, item2: Item): number => {
+        if (item1.title > item2.title) {
+          return 1;
+        } else {
+          return -1;
+        }
+      });
+    }
+  }
+
   fillShowcase(): void {
     this.filterShowcase();
+    this.sortShowcase();
     this.cleanShowcase();
     this.showcaseArr.forEach((item: Item): void => {
       this.createCard(item);

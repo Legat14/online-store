@@ -16,7 +16,7 @@
   @include flex(row, space-between, flex-start);
   
   .side-panel {
-    width: 400px;
+    width: 300px;
     @include flex(column, flex-start, flex-start);
     gap: 20px;
     
