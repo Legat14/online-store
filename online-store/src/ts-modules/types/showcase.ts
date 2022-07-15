@@ -5,6 +5,7 @@ import { Storage } from "./types";
 import { typeFilter } from "../engine/type-filter";
 import { sortBy, sortByEnum } from "../engine/sort";
 import { producerFilter } from "../engine/producer-filter";
+import { colorFilter } from "../engine/color-filter";
 
 export class Showcase {
 
@@ -112,6 +113,16 @@ export class Showcase {
         isPassFilter = false;
         producerFilter.forEach(filter => {
           if (item.producer === filter) {
+            isPassFilter = true;
+          }
+        });
+        console.log(isPassFilter);
+      }
+
+      if (isPassFilter && colorFilter.length !== 0) { // Фильтр по цвету
+        isPassFilter = false;
+        colorFilter.forEach(filter => {
+          if (item.color === filter) {
             isPassFilter = true;
           }
         });
