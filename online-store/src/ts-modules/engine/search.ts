@@ -4,7 +4,7 @@ export let searchString: string | undefined = '';
 
 const searchInput: HTMLInputElement | null = document.querySelector('.search-block__search-input');
 
-const searchBtn: HTMLButtonElement | null = document.querySelector('.top-panel__search-button');
+const searchBtn: HTMLButtonElement | null = document.querySelector('.top-panel__search-btn');
 
 searchBtn?.addEventListener('click', (): void => {
   searchString = searchInput?.value;

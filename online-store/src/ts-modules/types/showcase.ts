@@ -1,4 +1,4 @@
-import { storageArr } from "../vars/vars";
+import { cart, cartArr, storageArr } from "../vars/vars";
 import { popularChecked } from "../engine/popular-filter";
 import { Item } from "./item";
 import { Storage } from "./types";
@@ -71,6 +71,25 @@ export class Showcase {
       itemPopularImg.classList.add('item-card__popular-img_hidden');
     }
     
+    const itemToCartBtn: HTMLButtonElement = document.createElement('button');
+    itemToCartBtn.classList.add('item-card__to-cart-btn');
+    itemToCartBtn.innerHTML = 'Add to cart';
+    if (cartArr.includes(item)) {
+      itemToCartBtn.classList.add('item-card__to-cart-btn_disabled');
+      itemToCartBtn.setAttribute('disabled', '');
+    }
+    
+    itemToCartBtn.addEventListener('click', (): void => {
+      if (!cartArr.includes(item)) {
+        if (cartArr.length < 20) {
+          cart.addToCart(item);
+          itemToCartBtn.setAttribute('disabled', '');
+        } else {
+          alert('Sorry, the cart is full');
+        }
+      }
+    });
+    
     itemCard.append(itemTitle);
     itemCard.append(itemType);
     itemCard.append(itemImgDiv);
@@ -85,6 +104,7 @@ export class Showcase {
     itemPriceP.append(itemPriceTitle, itemPrice, itemPriceUnit);
     itemCard.append(itemPopularImgDiv);
     itemPopularImgDiv.append(itemPopularImg);
+    itemCard.append(itemToCartBtn);
     this.showcase?.append(itemCard);
   }
 
@@ -197,7 +217,7 @@ export class Showcase {
   }
 
   searchShowcase(): void {
-    let tempArr: Item[] = [];
+    const tempArr: Item[] = [];
     this.showcaseArr.forEach(item => {
       if (item.title.toLowerCase().search(searchString?.toLowerCase() as string) >= 0) {
         tempArr.push(item);
@@ -221,7 +241,7 @@ export class Showcase {
   }
   
   removeNothingFound(): void {
-    let nothingFound: HTMLDivElement | null = document.querySelector('.nothing-found');
+    const nothingFound: HTMLDivElement | null = document.querySelector('.nothing-found');
     if (nothingFound) {
       nothingFound.remove();
     }

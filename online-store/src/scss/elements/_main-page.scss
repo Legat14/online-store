@@ -8,6 +8,7 @@
 
 .top-panel {
   @include flex(row, space-evenly, center);
+  gap: 20px;
   .sort {
     @include flex(row, space-between, center);
   }
