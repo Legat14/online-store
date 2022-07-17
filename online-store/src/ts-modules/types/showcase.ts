@@ -6,6 +6,7 @@ import { typeFilter } from "../engine/type-filter";
 import { sortBy, sortByEnum } from "../engine/sort";
 import { producerFilter } from "../engine/producer-filter";
 import { colorFilter } from "../engine/color-filter";
+import { searchString } from "../engine/search";
 
 export class Showcase {
 
@@ -140,6 +141,7 @@ export class Showcase {
     allCards.forEach(card => {
       card.remove();
     });
+    this.removeNothingFound();
   }
 
   sortShowcase(){
@@ -194,13 +196,49 @@ export class Showcase {
     }
   }
 
+  searchShowcase(): void {
+    let tempArr: Item[] = [];
+    this.showcaseArr.forEach(item => {
+      if (item.title.toLowerCase().search(searchString?.toLowerCase() as string) >= 0) {
+        tempArr.push(item);
+      }
+      console.log(item.title.toLowerCase().search(searchString?.toLowerCase() as string));
+    });
+    this.showcaseArr = tempArr;
+  }
+
+  createNothingFound(): void {
+    let nothingFound: HTMLDivElement | null = document.querySelector('.nothing-found');
+    if (!nothingFound) {
+      nothingFound = document.createElement('div');
+      nothingFound.classList.add('nothing-found');
+      const nothingFoundP: HTMLDivElement = document.createElement('p');
+      nothingFoundP.innerHTML = 'We found... nothing';
+
+      nothingFound.append(nothingFoundP);
+      this.showcase?.append(nothingFound);
+    }
+  }
+  
+  removeNothingFound(): void {
+    let nothingFound: HTMLDivElement | null = document.querySelector('.nothing-found');
+    if (nothingFound) {
+      nothingFound.remove();
+    }
+  }
+
   fillShowcase(): void {
     this.filterShowcase();
+    this.searchShowcase();
     this.sortShowcase();
     this.cleanShowcase();
-    this.showcaseArr.forEach((item: Item): void => {
-      this.createCard(item);
-    });
+    if (this.showcaseArr.length > 0) {
+      this.showcaseArr.forEach((item: Item): void => {
+        this.createCard(item);
+      });
+    } else {
+      this.createNothingFound();
+    }
   }
 
 }

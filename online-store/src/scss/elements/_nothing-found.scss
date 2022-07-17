@@ -1,0 +1,9 @@
+@import "../general/mixines";
+
+.nothing-found {
+  width: 100%;
+  height: 100%;
+  @include flex(column, center, center);
+  font-size: 26px;
+  background-color: #c58af9;
+}
