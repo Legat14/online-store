@@ -114,7 +114,7 @@ export class Showcase {
     this.showcaseArr = [];
     storageArr.forEach(item => {
 
-      let isPassFilter: boolean = true;
+      let isPassFilter = true;
 
       if (popularChecked) { // Фильтр популярных элементов
         if (!item.isPopular) {

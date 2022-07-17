@@ -3,7 +3,7 @@ import { storageArr } from "../vars/vars";
 export class Item {
 
   id: number;
-  static currentId: number = 1;
+  static currentId = 1;
   title: string;
   type: InstrumentType;
   img: string;
