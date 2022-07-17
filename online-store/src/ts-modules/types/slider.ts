@@ -73,7 +73,7 @@ export class Slider {
     const min: number = +((this.minRange as HTMLInputElement).getAttribute('min') as string);
     const max: number = +((this.minRange as HTMLInputElement).getAttribute('max') as string);
     const precentValue: number = (max - min) / 100;
-    const trackMin: number = value / precentValue;
+    const trackMin: number = (value - min) / precentValue;
 
     console.log(value, min, max, precentValue, trackMin);
 
@@ -88,7 +88,7 @@ export class Slider {
     const min: number = +((this.minRange as HTMLInputElement).getAttribute('min') as string);
     const max: number = +((this.minRange as HTMLInputElement).getAttribute('max') as string);
     const precentValue: number = (max - min) / 100;
-    const trackMax: number = value / precentValue;
+    const trackMax: number = (value - min) / precentValue;
     
     console.log(value, min, max, precentValue, trackMax);
     

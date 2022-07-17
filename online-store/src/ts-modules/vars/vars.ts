@@ -11,3 +11,7 @@ export const priceFilterInputMin: HTMLInputElement | null = document.querySelect
 export const priceFilterInputMax: HTMLInputElement | null = document.querySelector('.price-filter__input-max');
 export const priceFilterMinP: HTMLDivElement | null = document.querySelector('.price-filter__min');
 export const priceFilterMaxP: HTMLDivElement | null = document.querySelector('.price-filter__max');
+export const releaseFilterInputMin: HTMLInputElement | null = document.querySelector('.release-date-filter__input-min');
+export const releaseFilterInputMax: HTMLInputElement | null = document.querySelector('.release-date-filter__input-max');
+export const releaseFilterMinP: HTMLDivElement | null = document.querySelector('.release-date-filter__min');
+export const releaseFilterMaxP: HTMLDivElement | null = document.querySelector('.release-date-filter__max');

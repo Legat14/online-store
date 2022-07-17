@@ -33,18 +33,20 @@
 
 .filter__input-max{
   top: 0;
-
+  z-index: 2;
+  
   &::-webkit-slider-runnable-track {
     top: -14px;
   }
   
-  &::-webkit-slider-thumb{
+  &::-webkit-slider-thumb {
     margin-top: 10px;
   }
 }
 
-.filter__input-min{
+.filter__input-min {
   top: 0;
+  z-index: 1;
   
   &::-webkit-slider-runnable-track {
     top: 14px;
@@ -69,6 +71,20 @@
   }
 }
 
-.price-filter__values-div {
+.release-date-filter__input-min {
+  --min-track: -webkit-linear-gradient(left, rgba(225, 225, 225, 1) 0%, rgba(225, 225, 225, 1) 25%, #5abbc0 25%, #5abbc0 100%);
+    &::-webkit-slider-runnable-track {
+      background-image: var(--min-track);
+    }
+}
+
+.release-date__input-max {
+  --max-track: -webkit-linear-gradient(left, rgba(225, 225, 225, 0) 0%, rgba(225, 225, 225, 0) 75%, #ffffff 75%, #ffffff 100%);
+  &::-webkit-slider-runnable-track {
+    background-image: var(--max-track);
+  }
+}
+
+.filter__values-div {
   @include flex(row, space-between, center);
 }

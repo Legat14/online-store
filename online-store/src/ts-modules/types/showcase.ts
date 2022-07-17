@@ -7,7 +7,7 @@ import { sortBy, sortByEnum } from "../engine/sort";
 import { producerFilter } from "../engine/producer-filter";
 import { colorFilter } from "../engine/color-filter";
 import { searchString } from "../engine/search";
-import { priceFilter } from "../engine/price-filter";
+import { priceFilter, releaseFilter } from "../engine/price-filter";
 
 export class Showcase {
 
@@ -157,6 +157,18 @@ export class Showcase {
 
       if (isPassFilter) { // Фильтр по максимальной цене
         if (priceFilter.maxFilter && priceFilter.maxFilter as number < item.price) {
+          isPassFilter = false;
+        }
+      }
+
+      if (isPassFilter) { // Фильтр по минимальному году выпуска
+        if (releaseFilter.minFilter && releaseFilter.minFilter as number > item.releaseYear) {
+          isPassFilter = false;
+        }
+      }
+
+      if (isPassFilter) { // Фильтр по максимальному году выпуска
+        if (releaseFilter.maxFilter && releaseFilter.maxFilter as number < item.releaseYear) {
           isPassFilter = false;
         }
       }
