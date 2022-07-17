@@ -7,6 +7,7 @@ import { sortBy, sortByEnum } from "../engine/sort";
 import { producerFilter } from "../engine/producer-filter";
 import { colorFilter } from "../engine/color-filter";
 import { searchString } from "../engine/search";
+import { priceFilter } from "../engine/price-filter";
 
 export class Showcase {
 
@@ -146,6 +147,18 @@ export class Showcase {
             isPassFilter = true;
           }
         });
+      }
+
+      if (isPassFilter) { // Фильтр по минимальной цене
+        if (priceFilter.minFilter && priceFilter.minFilter as number > item.price) {
+          isPassFilter = false;
+        }
+      }
+
+      if (isPassFilter) { // Фильтр по максимальной цене
+        if (priceFilter.maxFilter && priceFilter.maxFilter as number < item.price) {
+          isPassFilter = false;
+        }
       }
 
       if (isPassFilter) {

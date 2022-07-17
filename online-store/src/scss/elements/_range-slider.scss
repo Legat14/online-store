@@ -1,0 +1,74 @@
+@import "../general/mixines";
+
+.filter__input-max,
+.filter__input-min {
+  position: relative;
+  width: 220px;
+  height: 26px;
+  @include flex(row, center, center);
+  background-color: rgba(255, 255, 255, 0);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  &::-webkit-slider-runnable-track {
+    position: relative;
+    width: 100%;
+    height: 10px;
+    border: solid 1px #7c7c7c;
+    border-radius: 5px;
+  }
+
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 15px;
+    height: 12px;
+    background-color: #ffb553;
+    border-radius: 3px;
+    border: solid 1px #5c5c5c;
+    cursor: pointer;
+  }
+  
+}
+
+.filter__input-max{
+  top: 0;
+
+  &::-webkit-slider-runnable-track {
+    top: -14px;
+  }
+  
+  &::-webkit-slider-thumb{
+    margin-top: 10px;
+  }
+}
+
+.filter__input-min{
+  top: 0;
+  
+  &::-webkit-slider-runnable-track {
+    top: 14px;
+  }
+
+  &::-webkit-slider-thumb{
+    margin-top: -14px;
+  }
+}
+
+.price-filter__input-min {
+  --min-track: -webkit-linear-gradient(left, rgba(225, 225, 225, 1) 0%, rgba(225, 225, 225, 1) 25%, #5abbc0 25%, #5abbc0 100%);
+    &::-webkit-slider-runnable-track {
+      background-image: var(--min-track);
+    }
+}
+
+.price-filter__input-max {
+  --max-track: -webkit-linear-gradient(left, rgba(225, 225, 225, 0) 0%, rgba(225, 225, 225, 0) 75%, #ffffff 75%, #ffffff 100%);
+  &::-webkit-slider-runnable-track {
+    background-image: var(--max-track);
+  }
+}
+
+.price-filter__values-div {
+  @include flex(row, space-between, center);
+}
