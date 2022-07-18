@@ -15,3 +15,4 @@ export const releaseFilterInputMin: HTMLInputElement | null = document.querySele
 export const releaseFilterInputMax: HTMLInputElement | null = document.querySelector('.release-date-filter__input-max');
 export const releaseFilterMinP: HTMLDivElement | null = document.querySelector('.release-date-filter__min');
 export const releaseFilterMaxP: HTMLDivElement | null = document.querySelector('.release-date-filter__max');
+export const resetFiltersBtn: HTMLButtonElement | null = document.querySelector('.side-panel__reset-filter-button');

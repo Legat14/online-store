@@ -1,5 +1,5 @@
 import { cart, cartArr, storageArr } from "../vars/vars";
-import { popularChecked } from "../engine/popular-filter";
+import { popularCheckbox, popularChecked } from "../engine/popular-filter";
 import { Item } from "./item";
 import { Storage } from "./types";
 import { typeFilter } from "../engine/type-filter";
@@ -116,7 +116,7 @@ export class Showcase {
 
       let isPassFilter = true;
 
-      if (popularChecked) { // Фильтр популярных элементов
+      if (popularCheckbox?.checked) { // Фильтр популярных элементов
         if (!item.isPopular) {
           isPassFilter = false;
         }

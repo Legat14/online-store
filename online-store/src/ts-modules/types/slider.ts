@@ -38,7 +38,21 @@ export class Slider {
       return +this.maxRange.value
     }
   }
-  
+
+  setMinValue(value: number): void {
+    if (this.minRange) {
+      (this.minRange as HTMLInputElement).value = value.toString();
+    }
+    this.setMinSlider();
+  }
+
+  setMaxValue(value: number): void {
+    if (this.maxRange) {
+      (this.maxRange as HTMLInputElement).value = value.toString();
+    }
+    this.setMaxSlider();
+  }
+
     setMinSlider() {
       const min: number | undefined = this.getMinValue();
       this.minFilter = min;
