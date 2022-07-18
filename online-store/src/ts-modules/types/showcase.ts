@@ -85,6 +85,7 @@ export class Showcase {
         if (cartArr.length < 20) {
           cart.addToCart(item);
           itemToCartBtn.setAttribute('disabled', '');
+          itemToCartBtn.innerHTML = 'In the cart!'
         } else {
           alert('Sorry, the cart is full');
         }

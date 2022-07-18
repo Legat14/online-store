@@ -28,4 +28,27 @@ $card-color: #ffed49;
     }
 
   }
+
+  .item-card__to-cart-btn {
+    position: relative;
+    width: 140px;
+    height: 36px;
+    border-radius: 18px;
+    border: none;
+    box-shadow: 2px 2px 5px #000000;
+    cursor: pointer;
+  }
+
+  .item-card__to-cart-btn:hover:not(:disabled) {
+    transform: scale(103%);
+  }
+
+  .item-card__to-cart-btn:not(:disabled) {
+    background-color: #f6e264;
+  }
+
+  .item-card__to-cart-btn:disabled {
+    color: #ffffff;
+    background-color: #5ded53;
+  }
 }
