@@ -1,0 +1,22 @@
+.side-panel__reset-filter-btn,
+.side-panel__reset-local-storage-btn {
+  width: 160px;
+  height: 35px;
+  background-color: #8dfdd8;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px;
+  cursor: pointer;
+}
+
+.side-panel__reset-filter-btn:hover,
+.side-panel__reset-local-storage-btn:hover {
+  background-color: #ebffbd;
+  transform: scale(103%);
+}
+
+.side-panel__reset-filter-btn:active,
+.side-panel__reset-local-storage-btn:active {
+  background-color: #ffb871;
+  transform: scale(95%);
+}

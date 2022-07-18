@@ -1,0 +1,6 @@
+@import "../general/mixines";
+
+.top-panel__sort-block {
+  @include flex(row, space-between, center);
+  gap: 10px;
+}

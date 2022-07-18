@@ -1,7 +1,7 @@
 @import "../general/mixines";
 
 .cart {
-  width: 110px;
+  width: 180px;
   height: 70px;
   margin: 10px 0;
   @include flex(row, space-between, center);
@@ -20,4 +20,23 @@
     background-color: #fd9f23;
     border-radius: 5px;
   }
+
+  .cart__clean-btn {
+    background-color: #8dfdd8;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px;
+    cursor: pointer;
+  }
+
+  .cart__clean-btn:hover {
+    background-color: #ebffbd;
+    transform: scale(103%);
+  }
+
+  .cart__clean-btn:active {
+    background-color: #ffb871;
+    transform: scale(95%);
+  }
+
 }

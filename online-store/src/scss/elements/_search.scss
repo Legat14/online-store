@@ -1,0 +1,26 @@
+@import "../general/mixines";
+
+.top-panel__search-block {
+  @include flex(row, space-between, center);
+  gap: 10px;
+
+  .top-panel__search-btn {
+    width: 80px;
+    height: 25px;
+    background-color: #8dfdd8;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px;
+    cursor: pointer;
+  }
+  
+  .top-panel__search-btn:hover {
+    background-color: #ebffbd;
+    transform: scale(103%);
+  }
+  
+  .top-panel__search-btn:active {
+    background-color: #ffb871;
+    transform: scale(95%);
+  }
+}

@@ -1,17 +1,24 @@
 @import "../general/mixines";
 
-$card-color: #ffed49;
+$card-color: #ffffff;
 
 .item-card {
-  width: 300px;
+  width: 250px;
+  height: 550px;
+  padding: 10px;
+  @include flex(column, space-between, center);
   background-color: $card-color;
+  box-shadow: 5px 5px 10px;
+  border: 1px solid #000000;
+  border-radius: 10px;
 
   .item-card__img-div {
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
     @include flex(row, center, center);
     .item-card__img {
       width: 100%;
+      height: 100%;
     }
   }
   
@@ -40,7 +47,13 @@ $card-color: #ffed49;
   }
 
   .item-card__to-cart-btn:hover:not(:disabled) {
+    background-color: #f6e892 !important;
     transform: scale(103%);
+  }
+
+  .item-card__to-cart-btn:active:not(:disabled) {
+    background-color: #ffb871 !important;
+    transform: scale(95%);
   }
 
   .item-card__to-cart-btn:not(:disabled) {
