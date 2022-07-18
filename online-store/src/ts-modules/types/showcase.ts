@@ -178,7 +178,6 @@ export class Showcase {
       }
     });
 
-    console.log('ShowcaseArr: ', this.showcaseArr);
   }
   
   cleanShowcase(){
@@ -247,7 +246,6 @@ export class Showcase {
       if (item.title.toLowerCase().search(searchString?.toLowerCase() as string) >= 0) {
         tempArr.push(item);
       }
-      console.log(item.title.toLowerCase().search(searchString?.toLowerCase() as string));
     });
     this.showcaseArr = tempArr;
   }

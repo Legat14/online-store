@@ -13,7 +13,6 @@ export class Cart {
     cartArr.push(item);
     Cart.itemCounter = cartArr.length;
     Cart.refreshCounter();
-    console.log(Cart.itemCounter);
   }
   
   static cleanCart(): void {
@@ -21,7 +20,6 @@ export class Cart {
     Cart.itemCounter = cartArr.length;
     Cart.refreshCounter();
     showcase.fillShowcase();
-    console.log(Cart.itemCounter);
   }
 
   static refreshCounter(): void {

@@ -17,6 +17,5 @@ const sortSelect: HTMLInputElement | null = document.querySelector('.sort-block_
 sortSelect?.addEventListener('change', () => {
     const selectedSort: keyof typeof sortByEnum | string = sortSelect.value;
     sortBy = sortByEnum[selectedSort as keyof typeof sortByEnum];
-    console.log('Sort by: ', sortBy);
     showcase.fillShowcase();
   });

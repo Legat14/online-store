@@ -93,5 +93,3 @@ InstrumentColor.Black, 78300, true);
 const item4_7 = new Item('RM52KH6-CPM RHYTHM MATE', InstrumentType.Drums,
 './assets/img/rm52kh6-cpm-rythm-mate.jpg', 1999, InstrumentProducer.Tama,
 InstrumentColor.Red, 77000, false);
-
-console.log ('StorageArr: ', storageArr);

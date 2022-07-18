@@ -8,13 +8,10 @@ const searchBtn: HTMLButtonElement | null = document.querySelector('.top-panel__
 
 searchBtn?.addEventListener('click', (): void => {
   searchString = searchInput?.value;
-  console.log('Search string: ', searchString);
   showcase.fillShowcase();
 });
 
 searchInput?.addEventListener('search', (): void => {
   searchString = searchInput?.value;
-  console.log('Search string: ', searchString);
-  console.log('Clean search');
   showcase.fillShowcase();
 });

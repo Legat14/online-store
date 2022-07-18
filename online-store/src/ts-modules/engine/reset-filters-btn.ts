@@ -4,7 +4,7 @@ import { priceFilter, releaseFilter } from "./price-filter";
 import { producerFilter } from "./producer-filter";
 import { typeFilter } from "./type-filter";
 
-resetFiltersBtn?.addEventListener('click', (): void => {
+export function resetFilters() {
   const allCheckboxes: NodeListOf<HTMLInputElement> = document.querySelectorAll('input[type=checkbox]');
   allCheckboxes.forEach((checkbox: HTMLInputElement): void => {
     checkbox.checked = false;
@@ -16,6 +16,9 @@ resetFiltersBtn?.addEventListener('click', (): void => {
   releaseFilter.setMinValue(1847);
   priceFilter.setMaxValue(600000);
   releaseFilter.setMaxValue(2021);
+}
 
+resetFiltersBtn?.addEventListener('click', (): void => {
+  resetFilters();
   showcase.fillShowcase();
 });
