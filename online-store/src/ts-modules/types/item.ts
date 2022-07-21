@@ -23,12 +23,8 @@ export class Item {
     this.color = color;
     this.price = price;
     this.isPopular = isPopular;
-    //this.storeItem();
   }
 
-  // storeItem(): void {
-  //   storageArr.push(this);
-  // }
 }
 
 export enum InstrumentType {
