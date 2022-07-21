@@ -14,6 +14,13 @@ export class Cart {
     Cart.itemCounter = cartArr.length;
     Cart.refreshCounter();
   }
+
+  removeFromCart(item: Item): void {
+    const itemIndex: number = cartArr.indexOf(item);
+    cartArr.splice(itemIndex, 1);
+    Cart.itemCounter = cartArr.length;
+    Cart.refreshCounter();
+  }
   
   static cleanCart(): void {
     cartArr.splice(0, cartArr.length);

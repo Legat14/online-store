@@ -84,11 +84,17 @@ export class Showcase {
       if (!cartArr.includes(item)) {
         if (cartArr.length < 20) {
           cart.addToCart(item);
-          itemToCartBtn.setAttribute('disabled', '');
+          itemToCartBtn.classList.remove('item-card__to-cart-btn');
+          itemToCartBtn.classList.add('item-card__to-cart-btn_in-cart');
           itemToCartBtn.innerHTML = 'In the cart!'
         } else {
           alert('Sorry, the cart is full');
         }
+      } else {
+        cart.removeFromCart(item);
+        itemToCartBtn.classList.remove('item-card__to-cart-btn_in-cart');
+        itemToCartBtn.classList.add('item-card__to-cart-btn');
+        itemToCartBtn.innerHTML = 'Add to cart';
       }
     });
     

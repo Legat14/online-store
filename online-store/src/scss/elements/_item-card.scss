@@ -36,7 +36,8 @@ $card-color: #ffffff;
 
   }
 
-  .item-card__to-cart-btn {
+  .item-card__to-cart-btn,
+  .item-card__to-cart-btn_in-cart {
     position: relative;
     width: 140px;
     height: 36px;
@@ -46,21 +47,21 @@ $card-color: #ffffff;
     cursor: pointer;
   }
 
-  .item-card__to-cart-btn:hover:not(:disabled) {
+  .item-card__to-cart-btn:hover {
     background-color: #f6e892 !important;
     transform: scale(103%);
   }
 
-  .item-card__to-cart-btn:active:not(:disabled) {
+  .item-card__to-cart-btn:active {
     background-color: #ffb871 !important;
     transform: scale(95%);
   }
 
-  .item-card__to-cart-btn:not(:disabled) {
+  .item-card__to-cart-btn {
     background-color: #f6e264;
   }
 
-  .item-card__to-cart-btn:disabled {
+  .item-card__to-cart-btn_in-cart {
     color: #ffffff;
     background-color: #5ded53;
   }
