@@ -1,5 +1,5 @@
-import { cart, cartArr, storageArr } from "../vars/vars";
-import { popularCheckbox, popularChecked } from "../engine/popular-filter";
+import { cart, cartArr } from "../vars/vars";
+import { popularCheckbox } from "../engine/popular-filter";
 import { Item } from "./item";
 import { Storage } from "./types";
 import { typeFilter } from "../engine/type-filter";
@@ -13,9 +13,18 @@ export class Showcase {
 
   showcase: HTMLDivElement | null;
   showcaseArr: Storage = [];
+  storageArr: Storage = [];
 
   constructor() {
     this.showcase = document.querySelector('.showcase');
+  }
+
+  async getCardsArr(): Promise<void> {
+    const url = './data/mockData.ts';
+    const dataRes = await fetch(url);
+    const jsonData = await dataRes.json();
+    this.storageArr = jsonData;
+    this.fillShowcase();
   }
 
   createCard(item: Item): void {
@@ -119,7 +128,7 @@ export class Showcase {
   filterShowcase():void {
 
     this.showcaseArr = [];
-    storageArr.forEach(item => {
+    this.storageArr.forEach(item => {
 
       let isPassFilter = true;
 

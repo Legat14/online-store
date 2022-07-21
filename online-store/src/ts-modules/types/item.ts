@@ -1,5 +1,3 @@
-import { storageArr } from "../vars/vars";
-
 export class Item {
 
   id: number;
@@ -25,12 +23,12 @@ export class Item {
     this.color = color;
     this.price = price;
     this.isPopular = isPopular;
-    this.storeItem();
+    //this.storeItem();
   }
 
-  storeItem(): void {
-    storageArr.push(this);
-  }
+  // storeItem(): void {
+  //   storageArr.push(this);
+  // }
 }
 
 export enum InstrumentType {
