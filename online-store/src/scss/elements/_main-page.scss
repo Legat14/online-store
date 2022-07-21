@@ -9,7 +9,11 @@
 }
 
 .top-panel {
+  position: sticky;
+  top: 0px;
+  z-index: 100;
   padding: 12px 0;
+  background-color: #ffffff;
   @include flex(row, space-evenly, center);
   gap: 20px;
   .sort {
