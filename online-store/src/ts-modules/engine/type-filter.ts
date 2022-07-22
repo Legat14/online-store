@@ -15,7 +15,7 @@ document.querySelector('.type-filter__harmonicas-checkbox');
 const drumsCheckbox: HTMLInputElement | null =
 document.querySelector('.type-filter__drums-checkbox');
 
-guitarsCheckbox?.addEventListener('change', () => {
+guitarsCheckbox?.addEventListener('change', (): void => {
   if (guitarsCheckbox.checked) {
     typeFilter.push(InstrumentType.Guitars);
   } else {
@@ -25,7 +25,7 @@ guitarsCheckbox?.addEventListener('change', () => {
   showcase.fillShowcase();
 });
 
-keyboardsCheckbox?.addEventListener('change', () => {
+keyboardsCheckbox?.addEventListener('change', (): void => {
   if (keyboardsCheckbox.checked) {
     typeFilter.push(InstrumentType.Keyboards);
   } else {
@@ -35,7 +35,7 @@ keyboardsCheckbox?.addEventListener('change', () => {
   showcase.fillShowcase();
 });
 
-harmonicasCheckbox?.addEventListener('change', () => {
+harmonicasCheckbox?.addEventListener('change', (): void => {
   if (harmonicasCheckbox.checked) {
     typeFilter.push(InstrumentType.Harmonicas);
   } else {
@@ -45,7 +45,7 @@ harmonicasCheckbox?.addEventListener('change', () => {
   showcase.fillShowcase();
 });
 
-drumsCheckbox?.addEventListener('change', () => {
+drumsCheckbox?.addEventListener('change', (): void => {
   if (drumsCheckbox.checked) {
     typeFilter.push(InstrumentType.Drums);
   } else {

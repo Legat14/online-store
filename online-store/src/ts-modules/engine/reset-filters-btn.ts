@@ -4,7 +4,7 @@ import { priceFilter, releaseFilter } from "./price-filter";
 import { producerFilter } from "./producer-filter";
 import { typeFilter } from "./type-filter";
 
-export function resetFilters() {
+export function resetFilters(): void {
   const allCheckboxes: NodeListOf<HTMLInputElement> = document.querySelectorAll('input[type=checkbox]');
   allCheckboxes.forEach((checkbox: HTMLInputElement): void => {
     checkbox.checked = false;

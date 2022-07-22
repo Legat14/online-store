@@ -5,7 +5,7 @@ export const colorFilter: InstrumentColor[] = [];
 
 const colorCheckboxes: NodeListOf <HTMLInputElement> = document.querySelectorAll('.side-panel__color-filter input');
 
-export function filterColors(checkbox: HTMLInputElement) {
+export function filterColors(checkbox: HTMLInputElement): void {
   const filterName: string | undefined = checkbox.parentElement?.innerText.replace(' ', '').replace(' ', '');
     const currentFilter: InstrumentColor = InstrumentColor[filterName as keyof typeof InstrumentColor];
     if(checkbox.checked) {
@@ -17,7 +17,7 @@ export function filterColors(checkbox: HTMLInputElement) {
 }
 
 colorCheckboxes.forEach(checkbox => {
-  checkbox.addEventListener('change', () => {
+  checkbox.addEventListener('change', (): void => {
     filterColors(checkbox);
 
     showcase.fillShowcase();

@@ -37,7 +37,7 @@ export class Cart {
   
 }
 
-const cartCleanBtn = document.querySelector('.cart__clean-btn');
+const cartCleanBtn: HTMLButtonElement | null = document.querySelector('.cart__clean-btn');
 
 cartCleanBtn?.addEventListener ('click', (): void => {
   Cart.cleanCart();

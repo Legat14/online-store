@@ -125,7 +125,7 @@ export class Showcase {
     this.showcase?.append(itemCard);
   }
 
-  filterShowcase():void {
+  filterShowcase(): void {
 
     this.showcaseArr = [];
     this.storageArr.forEach(item => {
@@ -196,15 +196,15 @@ export class Showcase {
 
   }
   
-  cleanShowcase(){
+  cleanShowcase(): void {
     const allCards: NodeListOf<HTMLDivElement> = document.querySelectorAll('.item-card');
-    allCards.forEach(card => {
+    allCards.forEach((card: HTMLDivElement): void => {
       card.remove();
     });
     this.removeNothingFound();
   }
 
-  sortShowcase(){
+  sortShowcase(): void {
     if (sortBy === sortByEnum.Alphabetical) {
       this.showcaseArr.sort((item1: Item, item2: Item): number => {
         if (item1.title.toLowerCase() > item2.title.toLowerCase()) {
@@ -258,7 +258,7 @@ export class Showcase {
 
   searchShowcase(): void {
     const tempArr: Item[] = [];
-    this.showcaseArr.forEach(item => {
+    this.showcaseArr.forEach((item: Item): void => {
       if (item.title.toLowerCase().search(searchString?.toLowerCase() as string) >= 0) {
         tempArr.push(item);
       }
